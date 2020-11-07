@@ -213,8 +213,6 @@ class CountingBloomFilter(BloomFilter):
 		'''
 		if self.count >= self.capacity:
 			raise IndexError('BloomFilter is at capacity.')
-		if element in self:
-			return True
 		_element = self._to_str(element)
 		i = 0
 		for _ in range(self.hash_num):
